@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  align-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.task {
+  min-height: 80px;
+  background-color: rgb(216, 216, 32);
+  border-radius: 10px;
+  margin-top: 20px;
+  color: black;
+  font-size: large;
+  display: flex;
+  align-items: center;
+}
+.task_done {
+  min-height: 80px;
+  background-color: grey;
+  text-decoration: line-through;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-size: large;
+  display: flex;
+  align-items: center;
+}
+
+.task__panel {
+  width: 84%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 8%;
+  align-items: center;
+}
+
+.task__panel__text {
+  width: 70%;
+  word-wrap: break-word;
+  min-height: 100%;
+}
+
+.status_btn {
+  width: 1.5em;
+  height: 1.5em;
+  background-color: white;
+  border-radius: 50%;
+  border: none;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.status_btn:checked{
+  appearance: auto;
+  clip-path: circle(50% at 50% 50%);
+}
+
+.modal__btn {
+  display: flex;
+  justify-content: start;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+.shake {
+  animation: shake 0.5s; /* Run the shake animation for 0.5 seconds */
+  animation-timing-function: ease-in-out;
 }
