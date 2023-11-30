@@ -55,6 +55,14 @@ const MyModal = ({ show }) => {
                 placeholder="Description"
               />
             </Form.Group>
+            <Form.Group className="sm">
+              <Form.Label>Post Status</Form.Label>
+              <Form.Check
+                checked={post.status}
+                onChange={(e) => setPost({ ...post, status: e.target.checked })}
+                type="checkbox"
+              />
+            </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
