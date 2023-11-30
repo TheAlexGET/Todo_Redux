@@ -8,7 +8,7 @@ import { setSortAction } from "../store/sortReducer";
 const MyModal = ({ show }) => {
   const dispatch = useDispatch();
   const sort = useSelector((state) => state.sort.sort);
-  const [post, setPost] = useState({ title: "", body: "", status: true });
+  const [post, setPost] = useState({ title: "", body: "", isDone: false });
   const [shake, setShake] = useState(false);
 
   const startShake = () => {
@@ -18,7 +18,7 @@ const MyModal = ({ show }) => {
 
   const addPost = (post) => {
     dispatch(addTaskAction(post));
-    setPost({ title: "", body: "", status: true });
+    setPost({ title: "", body: "", isDone: false });
     dispatch(changeModalAction(false));
   };
   return (
@@ -56,10 +56,10 @@ const MyModal = ({ show }) => {
               />
             </Form.Group>
             <Form.Group className="sm">
-              <Form.Label>Post Status</Form.Label>
+              <Form.Label>Done</Form.Label>
               <Form.Check
-                checked={post.status}
-                onChange={(e) => setPost({ ...post, status: e.target.checked })}
+                checked={post.isDone}
+                onChange={(e) => setPost({ ...post, isDone: e.target.checked })}
                 type="checkbox"
               />
             </Form.Group>

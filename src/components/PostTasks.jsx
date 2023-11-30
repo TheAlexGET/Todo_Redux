@@ -27,8 +27,8 @@ const PostTasks = ({ tasks }) => {
   return (
     <div>
       {tasks.map((task, index) => (
-        <div key={task.id} className={task.status ? "task" : "task_done"}>
-            <input type="checkbox" name="status" className="status_btn" onClick={() =>{
+        <div key={task.id} className={task.isDone ? "task_done" : "task"}>
+            <input checked={task.isDone} type="checkbox" name="status" className="status_btn" onClick={() =>{
                 dispatch({ type: "CHANGE_STATUS", payload: task.id });
                 if(sort === 'date'){
                   setTimeout(() => dispatch(sortByDateAction()), 300)

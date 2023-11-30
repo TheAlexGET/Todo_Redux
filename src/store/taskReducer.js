@@ -2,8 +2,8 @@
 
 const defaultState = {
   tasks: [
-    { id: 1699274947619, title: "test3", body: "test_body", status: true },
-    { id: 1699274947618, title: "test2", body: "test_body", status: true },
+    { id: 1699274947619, title: "test3", body: "test_body", isDone: false},
+    { id: 1699274947618, title: "test2", body: "test_body", isDone: false},
   ],
 };
 
@@ -33,7 +33,7 @@ export const taskReducer = (state = defaultState, action) => {
       let statusSortedTasks = [...state.tasks];
       for (let i = 0; i < statusSortedTasks.length - 1; i++) {
         for (let j = 0; j < statusSortedTasks.length - 1; j++) {
-          if (!statusSortedTasks[i].status) {
+          if (statusSortedTasks[i].isDone) {
             let tmp = statusSortedTasks[i];
             statusSortedTasks.splice(i, 1);
             statusSortedTasks.push(tmp);
@@ -50,7 +50,7 @@ export const taskReducer = (state = defaultState, action) => {
       let newTasks = [...state.tasks];
       newTasks.forEach((task) => {
         if (task.id === action.payload) {
-          task.status = !task.status;
+          task.isDone = !task.isDone;
         }
       });
       return { ...state, tasks: [...newTasks] };
