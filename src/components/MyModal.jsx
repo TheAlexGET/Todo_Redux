@@ -56,12 +56,14 @@ const MyModal = ({ show }) => {
               />
             </Form.Group>
             <Form.Group className="sm">
-              <Form.Label>Done</Form.Label>
+              
               <Form.Check
+              inline
                 checked={post.isDone}
                 onChange={(e) => setPost({ ...post, isDone: e.target.checked })}
                 type="checkbox"
               />
+              <Form.Label>Done</Form.Label>
             </Form.Group>
           </Form>
         </Modal.Body>

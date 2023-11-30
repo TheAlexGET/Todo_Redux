@@ -1,5 +1,3 @@
-//status: true is task in progress
-
 const defaultState = {
   tasks: [
     { id: 1699274947619, title: "test3", body: "test_body", isDone: false},

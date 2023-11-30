@@ -43,7 +43,7 @@ function App() {
       <MyModal show={modal}></MyModal>
       {tasks.length > 0
       ?<PostTasks tasks={tasks}></PostTasks>
-      :<h1>No Tasks</h1>
+      :<h1 style={{color: 'white'}}>No Tasks</h1>
       }
     </div>
   );
